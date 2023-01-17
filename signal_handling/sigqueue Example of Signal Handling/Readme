@@ -1,0 +1,39 @@
+
+In this example,  sender.c program sends SIGUSR1 signal with an integer
+value (given in command line arg) to the receiver process whose PID 
+is specifed in command line arg. 
+
+ Usage::
+     sender receiverPD intValue
+The sender process uses sigqueue system call to send a signal with some integer value.
+
+
+receiver.c contains program code for the receiver process.  This process first prints its PID.
+It then sets up a signal handler using sigaction system call.
+In sigaction call it specifies sa_flags to include SA_SIGINFO flag to obtain the value associated with a signal.
+The receiver process then makes sigsuspend call to wait for any signal to be delivered.
+
+---------------------------------------------------------------
+
+Compile both these programs
+  gcc sender.c -o sender
+  gcc receiver.c -o receiver
+
+To run this example:
+
+  receiver &   // This will print PID of receiver
+
+  sender receiverPID someInteger
+  
+
+----------------------------------------------------------------
+See manpages for:
+    man sigaction
+    man sigqueue
+-----------------------------------------------------------------
+
+
+  
+
+
+

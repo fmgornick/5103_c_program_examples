@@ -1,0 +1,16 @@
+README	(1995.05.15)
+
+Question: Convert the supplied program to use threads.
+
+The following restrictions apply:
+
+	1) One thread will print "hello ", one thread will print "world",
+		the main function will print the trailing "\n".
+
+Hints & Tips:
+
+	1) You must use a synchronization method to ensure that the "world"
+		thread runs after the "hello" thread.
+
+	2) You must use a synchronization method to assure that the main
+		thread does not execute until after the "world" thread.

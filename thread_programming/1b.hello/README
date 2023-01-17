@@ -1,0 +1,24 @@
+README	(1995.05.15)
+
+Question: Convert the supplied program to use threads.
+
+The following restrictions apply:
+
+	1) One thread will print "hello ", one thread will print "world",
+		the main function will print the trailing "\n".
+
+	2) The "world" thread will be created before the "hello" thread.
+
+	3) Both the "hello" and "world" thread must run concurrently.
+
+Hints & Tips:
+
+	1) You must use a synchronization primitive to synchronize execution
+		of the two threads; "hello" and "world".
+
+	2) You must use a synchronization method to assure that the main
+		thread does not execute until after the "world" thread.
+
+	3) It is a shorter program if you use the Solaris thread library
+		semaphore to synchronize between the "hello" and "world"
+		threads.
